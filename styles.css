@@ -1,0 +1,78 @@
+/* universal */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 11fr .5fr;
+}
+
+h3 {
+    margin: 1ch 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main > h1 {
+    text-align: center;
+}
+
+/* header */
+
+header {
+    padding: 0 5ch;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: orange;
+}
+
+.header-links-box {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 4ch;
+}
+
+.main-content {
+    margin: 1ch 10ch;
+}
+
+/* index.html */
+
+.tiles-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5ch;
+}
+
+.tiles-box > * {
+    background-color: aqua;
+    height: 20vh;
+    padding: 5ch;
+    border-radius: 2ch;
+}
+
+/* timetable */
+
+.timetable-table {
+    font-size: 2.5ch;
+    border: 1px solid black;
+}
+
+.timetable-table > td {
+    padding: 1ch 1ch;
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    align-items: center;
+    padding: 0 5ch;
+    background-color: orange;
+}

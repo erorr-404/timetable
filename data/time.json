@@ -1,0 +1,72 @@
+{
+    "1": {
+        "start": {
+            "hour": 8,
+            "minute": 0
+        },
+        "end": {
+            "hour": 8,
+            "minute": 45
+        }
+    },
+    "2": {
+        "start": {
+            "hour": 8,
+            "minute": 50
+        },
+        "end": {
+            "hour": 9,
+            "minute": 35
+        }
+    },
+    "3": {
+        "start": {
+            "hour": 9,
+            "minute": 45
+        },
+        "end": {
+            "hour": 10,
+            "minute": 30
+        }
+    },
+    "4": {
+        "start": {
+            "hour": 10,
+            "minute": 40
+        },
+        "end": {
+            "hour": 11,
+            "minute": 25
+        }
+    },
+    "5": {
+        "start": {
+            "hour": 11,
+            "minute": 35
+        },
+        "end": {
+            "hour": 12,
+            "minute": 20
+        }
+    },
+    "6": {
+        "start": {
+            "hour": 12,
+            "minute": 25
+        },
+        "end": {
+            "hour": 13,
+            "minute": 10
+        }
+    },
+    "7": {
+        "start": {
+            "hour": 13,
+            "minute": 30
+        },
+        "end": {
+            "hour": 14,
+            "minute": 15
+        }
+    }
+}
