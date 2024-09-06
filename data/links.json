@@ -2,8 +2,7 @@
     "Алгебра": "https://us04web.zoom.us/j/4117414479?pwd=Q2J5RmNLZUU2QWhLSllGOEs2RlpVUT09",
     "Геометрія": "https://us04web.zoom.us/j/4117414479?pwd=Q2J5RmNLZUU2QWhLSllGOEs2RlpVUT09",
     "Історія України": "https://meet.google.com/mxk-gqxw-onj",
-    "Англійська мова 1": "https://meet.google.com/szh-mfpt-gqh",
-    "Англійська мова 2": "https://meet.google.com/hep-ibpu-ssg",
+    "Англійська мова": "./dialogs/english.html",
     "Хімія": "https://meet.google.com/qim-muko-agi",
     "Фізика": "https://meet.google.com/ema-dwiq-ort",
     "Всесвітня Історія": "https://meet.google.com/mxk-gqxw-onj",
@@ -14,10 +13,8 @@
     "Зарубіжна література": "https://meet.google.com/jxt-jksw-zqe",
     "Українська література": "https://meet.google.com/abj-momz-dki",
     "Захист України": "https://meet.google.com/qei-zoao-ton",
-    "Фізкультура 1": "https://meet.google.com/krx-yfdv-ccs",
-    "Фізкультура 2": "https://meet.google.com/ptd-isxq-gbz",
-    "Інформатика 1": "https://meet.google.com/cht-vkce-uwq",
-    "Інформатика 2": "https://meet.google.com/cnh-tcsc-xtm",
+    "Фізкультура": "./dialogs/physical_education.html",
+    "Інформатика": "./dialogs/informatics.html",
     "СШП": "https://www.youtube.com/watch?v=A67ZkAd1wmI",
-    "Технології": "https://meet.google.com/zpb-xwed-zsz"
+    "Технології": "./dialogs/technologies.html"
 }

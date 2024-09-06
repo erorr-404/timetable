@@ -1,11 +1,18 @@
 const table = document.getElementById("main-table")
 const tableRows = table.querySelectorAll("tr")
 let importance = {}
+let links = {}
 
 fetch("./data/importance.json")
   .then((response) => response.json())
   .then((json) => {
     importance = json
+  })
+
+  fetch("./data/links.json")
+  .then((response) => response.json())
+  .then((json) => {
+    links = json
   })
 
 fetch("./data/timetable.json")
@@ -14,9 +21,18 @@ fetch("./data/timetable.json")
     for (const [day, subjects] of Object.entries(json)) {
       let counter = 1
       subjects.forEach(subject => {
+        while (importance[subject] == undefined) {}
         const cell = document.createElement("td")
-        cell.innerText = subject
         cell.classList.add(`imp-lvl-${importance[subject]}`)
+
+        const link = document.createElement("a")
+        while (links[subject] == undefined) {}
+        link.href = links[subject]
+        link.target = "_blank"
+        link.innerText = subject
+
+        cell.appendChild(link)
+
         tableRows[counter].appendChild(cell)
         counter++
       })

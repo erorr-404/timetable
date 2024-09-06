@@ -41,6 +41,10 @@ main > h1 {
     text-align: center;
 }
 
+.tip {
+    text-align: center;
+}
+
 /* header */
 
 header {
