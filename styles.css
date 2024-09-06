@@ -59,6 +59,14 @@ header {
 
 /* timetable */
 
+.main-content.timetable {
+    margin: 0 auto;
+}
+
+#main-table {
+    margin: 0 auto;
+}
+
 .timetable-table {
     font-size: 2.5ch;
     border: 1px solid black;
