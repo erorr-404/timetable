@@ -2,7 +2,7 @@
     "1": {
         "start": {
             "hour": 8,
-            "minute": 0
+            "minute": "00"
         },
         "end": {
             "hour": 8,

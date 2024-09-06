@@ -1,5 +1,25 @@
 /* universal */
 
+.imp-lvl-1 {
+    background-color: #FF0000;
+}
+
+.imp-lvl-2 {
+    background-color: #FFC000;
+}
+
+.imp-lvl-3 {
+    background-color: #FFFF00;
+}
+
+.imp-lvl-4 {
+    background-color: #92D050;
+}
+
+.imp-lvl-5 {
+    background-color: #00B050;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -51,7 +71,7 @@ header {
 }
 
 .tiles-box > * {
-    background-color: aqua;
+    background-color: orange;
     height: 20vh;
     padding: 5ch;
     border-radius: 2ch;
@@ -69,11 +89,21 @@ header {
 
 .timetable-table {
     font-size: 2.5ch;
-    border: 1px solid black;
+    table-layout: fixed;
 }
 
 .timetable-table > td {
     padding: 1ch 1ch;
+}
+
+.timetable-table, td, th {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: .5ch;
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* footer */
