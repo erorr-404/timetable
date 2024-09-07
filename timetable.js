@@ -44,20 +44,20 @@ fetch("./data/timetable.json")
       cell.classList.add("text-center")
       tableRows[i].appendChild(cell)
     }
-  })
 
-fetch("./data/time.json")
-  .then((response) => response.json())
-  .then((json) => {
-    for (const [number, time] of Object.entries(json)) {
-      const startCell = document.createElement("td")
-      startCell.innerText = `${time.start.hour}:${time.start.minute}`
-      startCell.classList.add("text-center")
-      tableRows[number].appendChild(startCell)
+    fetch("./data/time.json")
+    .then((response) => response.json())
+    .then((json) => {
+      for (const [number, time] of Object.entries(json)) {
+        const startCell = document.createElement("td")
+        startCell.innerText = `${time.start.hour}:${time.start.minute}`
+        startCell.classList.add("text-center")
+        tableRows[number].appendChild(startCell)
 
-      const endCell = document.createElement("td")
-      endCell.innerText = `${time.end.hour}:${time.end.minute}`
-      endCell.classList.add("text-center")
-      tableRows[number].appendChild(endCell)
-    }
+        const endCell = document.createElement("td")
+        endCell.innerText = `${time.end.hour}:${time.end.minute}`
+        endCell.classList.add("text-center")
+        tableRows[number].appendChild(endCell)
+      }
+    })
   })

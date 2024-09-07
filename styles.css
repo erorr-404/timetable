@@ -81,6 +81,15 @@ header {
     border-radius: 2ch;
 }
 
+#lesson-autoconnect {
+    cursor: pointer;
+}
+
+.unavailable {
+    background-color: #808080;
+    color: #bbbbbb;
+}
+
 /* timetable */
 
 .main-content.timetable {
