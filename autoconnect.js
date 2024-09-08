@@ -1,25 +1,33 @@
-let timetable = []
-let links = []
 const currentLessonLabel = document.getElementById("current-lesson")
+const button = document.getElementById("lesson-autoconnect")
 
-fetch("./data/links.json")
-  .then((response) => response.json())
-  .then((json) => {links = json})
+const fetchRequests = [
+  fetch("./data/links.json"),
+  fetch("./data/timetable.json"),
+  fetch("./data/time.json"),
+]
 
-fetch("./data/timetable.json")
-  .then((response) => response.json())
-  .then((json) => {timetable = json})
+Promise.all(fetchRequests)
+  .then(response => {
+    return Promise.all(response.map(response => response.json()))
+  })
+  .then(data => {
+    updateAutoconnect(data)
+  })
+  .catch(error => {
+    alert(`Error: ${error}`)
+  })
 
-fetch("./data/time.json")
-  .then((response) => response.json())
-  .then((json) => {
-    const button = document.getElementById("lesson-autoconnect")
-    
-    const currentLessonNumber = getLessonNumber(json)
+function updateAutoconnect(data) {
+  const dataLinks = data[0]
+  const dataTimetable = data[1]
+  const dataTime = data[2]
+
+  const currentLessonNumber = getLessonNumber(dataTime)
     if (currentLessonNumber ==  null || currentLessonNumber == undefined) {
       currentLessonLabel.innerText = "нічого"
     } else {
-      const currentLesson = timetable[getDayName()][currentLessonNumber]
+      const currentLesson = dataTimetable[getDayName()][currentLessonNumber]
       currentLessonLabel.innerText = currentLesson
     }
 
@@ -28,10 +36,10 @@ fetch("./data/time.json")
         window.open("https://www.youtube.com/watch?v=A67ZkAd1wmI", "_blank").focus()
         return
       } else {
-        window.open(links[currentLessonLabel.innerText], "_blank").focus()
+        window.open(dataLinks[currentLessonLabel.innerText], "_blank").focus()
       }
     })
-  })
+}
 
 function getDayName() {
   const now = new Date()
