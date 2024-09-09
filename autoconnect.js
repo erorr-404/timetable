@@ -23,28 +23,29 @@ function updateAutoconnect(data) {
   const dataTimetable = data[1]
   const dataTime = data[2]
 
-  const currentLessonNumber = getLessonNumber(dataTime)
-    if (currentLessonNumber ==  null || currentLessonNumber == undefined) {
-      currentLessonLabel.innerText = "нічого"
-    } else {
-      const currentLesson = dataTimetable[getDayName()][currentLessonNumber]
-      currentLessonLabel.innerText = currentLesson
-    }
+  const currentLessonNumber = parseInt(getLessonNumber(dataTime))
+  const currentLesson = dataTimetable[getDayName()][currentLessonNumber - 1]
 
-    button.addEventListener('click', () => {
-      if (currentLessonLabel.innerText == "нічого") {
-        window.open("https://www.youtube.com/watch?v=A67ZkAd1wmI", "_blank").focus()
-        return
-      } else {
-        window.open(dataLinks[currentLessonLabel.innerText], "_blank").focus()
-      }
-    })
+  if (currentLesson == undefined) {
+    currentLessonLabel.innerText = "нічого"
+  } else {
+    currentLessonLabel.innerText = currentLesson
+  }
+    
+  button.addEventListener('click', () => {
+    if (currentLessonLabel.innerText == "нічого") {
+      window.open("https://www.youtube.com/watch?v=A67ZkAd1wmI", "_blank").focus()
+      return
+    } else {
+      window.open(dataLinks[currentLessonLabel.innerText], "_blank").focus()
+    }
+  })
 }
 
 function getDayName() {
   const now = new Date()
   const dayNumber = now.getDay()
-  let day = null
+  let day
   switch (dayNumber) {
     case 1:
       day = "monday"
@@ -65,29 +66,23 @@ function getDayName() {
       day = null
       break;
   }
-
   return day
 }
 
 function getLessonNumber(timetable) {
   const now = new Date()
-  const currentHour = now.getHours()
-  const currentMinute = now.getMinutes()
+  const currentTimeInMins = (now.getHours() * 60) + now.getMinutes()
 
   for (const lessonNumber in timetable) {
     const lesson = timetable[lessonNumber];
-    const startTime = lesson.start;
-    const endTime = lesson.end;
+    const lessonStartTimeInMins = (parseInt(lesson.start.hour) * 60) + parseInt(lesson.start.minute)
+    const lessonEndTimeInMins = (parseInt(lesson.end.hour) * 60) + parseInt(lesson.end.minute)
     
-    if (
-      currentHour >= startTime.hour &&
-      currentMinute >= startTime.minute &&
-      (currentHour < endTime.hour ||
-      (currentHour === endTime.hour && currentMinute <= endTime.minute))
-    ) {
-      return lessonNumber;
+    if (lessonStartTimeInMins <= currentTimeInMins && currentTimeInMins <= lessonEndTimeInMins) {
+      return lessonNumber
     }
-
-    return null
   }
+  return null
 }
+
+
