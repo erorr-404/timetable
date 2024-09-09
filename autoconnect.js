@@ -84,5 +84,3 @@ function getLessonNumber(timetable) {
   }
   return null
 }
-
-
