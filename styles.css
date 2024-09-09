@@ -213,6 +213,12 @@ header {
     text-align: center;
 }
 
+/* links */
+
+#links-box {
+    font-size: larger;
+}
+
 /* footer */
 
 footer {
