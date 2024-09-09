@@ -1,23 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Comfortaa:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 /* universal */
 
+:root {
+    --background-main-color: #e7e7e7;
+    --main-font: "Roboto", sans-serif;
+    --table-head-font: "Amatic SC", sans-serif, 400, normal;
+    --main-element-color: #f5f5f5;
+    --default-shadow: 0 26px 58px 0 rgba(0, 0, 0, .22), 0 5px 14px 0 rgba(0, 0, 0, .18);
+    --default-border-radius: 1ch;
+    --header-text-color: #313131;
+
+    /* columns colors */
+
+    --col-1: #f7c92c;
+    --col-2: #04a195;
+    --col-3: #04a7bf;
+    --col-4: #f18135;
+    --col-5: #a04e98;
+}
+
+.colum-head {
+    font-family: "Comfortaa", sans-serif;
+    font-style: normal;
+    color: var(--main-element-color);
+}
+
+.column-black-font {
+    font-family: "Comfortaa", sans-serif;
+    font-style: normal;
+    color: var(--header-text-color);
+}
+
+.column-1 {
+    background-color: var(--col-1);
+}
+
+.column-2 {
+    background-color: var(--col-2);
+}
+
+.column-3 {
+    background-color: var(--col-3);
+}
+
+.column-4 {
+    background-color: var(--col-4);
+}
+
+.column-5 {
+    background-color: var(--col-5);
+}
+
 .imp-lvl-1 {
-    background-color: #FF0000;
+    background-color: #fe797c;
 }
 
 .imp-lvl-2 {
-    background-color: #FFC000;
+    background-color: #ffb850;
 }
 
 .imp-lvl-3 {
-    background-color: #FFFF00;
+    background-color: #ffe955;
 }
 
 .imp-lvl-4 {
-    background-color: #92D050;
+    background-color: #8ee968;
 }
 
 .imp-lvl-5 {
-    background-color: #00B050;
+    background-color: #36cedc;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
 }
 
 body {
@@ -25,7 +87,10 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 11fr .5fr;
+    grid-template-rows: 1fr 10fr .5fr;
+    background-color: var(--background-main-color);
+    font-family: var(--main-font);
+    color: var(--header-text-color);
 }
 
 h3 {
@@ -48,11 +113,17 @@ main > h1 {
 /* header */
 
 header {
+    margin: 1ch;
     padding: 0 5ch;
     display: flex;
     align-items: center;
     flex-wrap: nowrap;
-    background-color: orange;
+    background-color: var(--col-3);
+    box-shadow: var(--default-shadow);
+    border-radius: var(--default-border-radius);
+    font-family: "Comfortaa", sans-serif;
+    font-style: normal;
+    color: var(--main-element-color);
 }
 
 .header-links-box {
@@ -75,10 +146,27 @@ header {
 }
 
 .tiles-box > * {
-    background-color: orange;
+    background-color: var(--main-element-color);
+    box-shadow: var(--default-shadow);
+    border-radius: var(--default-border-radius);
+    font-family: "Comfortaa", sans-serif;
+    font-style: normal;
+    color: var(--main-element-color);
     height: 20vh;
     padding: 5ch;
-    border-radius: 2ch;
+    border-radius: 1.5ch;
+}
+
+.tiles-box > *:nth-child(1) {
+    background-color: var(--col-4);
+}
+
+.tiles-box > *:nth-child(2) {
+    background-color: var(--col-2);
+}
+
+.tiles-box > *:nth-child(3) {
+    background-color: var(--col-5);
 }
 
 #lesson-autoconnect {
@@ -110,9 +198,15 @@ header {
 }
 
 .timetable-table, td, th {
+    font-size: 1.2rem;
     border: 1px solid;
-    border-collapse: collapse;
+    border-radius: var(--default-border-radius);
+    border-color: #ffffff00;
+    /* border-collapse: collapse; */
     padding: .5ch;
+    border-spacing: .5ch;
+    box-shadow: var(--default-shadow);
+    background-color: var(--main-element-color);
 }
 
 .text-center {
@@ -122,8 +216,12 @@ header {
 /* footer */
 
 footer {
+    /* margin: 1ch; */
+    height: 3ch;
     display: flex;
     align-items: center;
     padding: 0 5ch;
-    background-color: orange;
+    /* background-color: var(--main-element-color); */
+    /* box-shadow: var(--default-shadow); */
+    /* border-radius: var(--default-border-radius); */
 }
