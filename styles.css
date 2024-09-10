@@ -169,6 +169,10 @@ header {
     background-color: var(--col-5);
 }
 
+.tiles-box > *:nth-child(4) {
+    background-color: var(--col-3);
+}
+
 #lesson-autoconnect {
     cursor: pointer;
 }
@@ -217,6 +221,31 @@ header {
 
 #links-box {
     font-size: larger;
+}
+
+/* books */
+
+.books-box {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1ch;
+}
+
+.book {
+    background-color: var(--main-element-color);
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1ch;
+}
+
+.book > img {
+    height: 170px;
+    border-radius: .5ch;
 }
 
 /* footer */
