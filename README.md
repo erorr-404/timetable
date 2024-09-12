@@ -11,5 +11,5 @@ This is web-site with timetable. Here, we can watch school schedule, get link to
   - [x] Bugs
   - [x] don`t forget to delete it
   - [x] all **books** access
-  - [ ] **mobile devices adaptation** (not ready)
+  - [x] **mobile devices adaptation**
   - [ ] ***more in the future...***
