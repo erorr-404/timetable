@@ -15,7 +15,7 @@ Promise.all(fetchRequests)
     updateAutoconnect(data)
   })
   .catch(error => {
-    alert(`Error: ${error}`)
+    // alert(`Error: ${error}`)
   })
 
 function updateAutoconnect(data) {

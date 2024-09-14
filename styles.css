@@ -271,15 +271,26 @@ header {
     font-size: larger;
 }
 
+#links-box > a:hover {
+    font-size: x-large;
+    transition: .25s all ease;
+}
+
 /* books */
 
 .books-box {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    /* display: grid; */
+    /* grid-template-columns: repeat(8, 1fr); */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1ch;
 }
 
 .book {
+    width: 154px;
+    height: 255px;
     background-color: var(--main-element-color);
     border-radius: var(--default-border-radius);
     box-shadow: var(--default-shadow);
