@@ -78,7 +78,7 @@ function getLessonNumber(timetable) {
     const lessonStartTimeInMins = (parseInt(lesson.start.hour) * 60) + parseInt(lesson.start.minute)
     const lessonEndTimeInMins = (parseInt(lesson.end.hour) * 60) + parseInt(lesson.end.minute)
     
-    if (lessonStartTimeInMins <= currentTimeInMins && currentTimeInMins <= lessonEndTimeInMins) {
+    if (lessonStartTimeInMins - 5 <= currentTimeInMins && currentTimeInMins <= lessonEndTimeInMins) {
       return lessonNumber
     }
   }
