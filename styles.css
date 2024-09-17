@@ -159,6 +159,28 @@ header {
 
 /* index.html */
 
+.info-block {
+    margin: 1ch 10ch;
+    background-color: var(--main-element-color);
+    padding: 3ch;
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    background-color: #ffe955;
+    border: #f7c92c solid 2px;
+}
+
+.info-block > h3 {
+    display: flex;
+    gap: .5ch;
+}
+
+@media screen and (max-width: 767px) {
+    .info-block {
+        width: 80vw;
+        margin: 2ch auto;
+    }
+}
+
 .tiles-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
