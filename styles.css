@@ -245,6 +245,48 @@ header {
     }
 }
 
+.alarm-modal {
+    position: fixed;
+    bottom: 1ch;
+    right: 1ch;
+    padding: 2ch;
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    background-color: var(--col-1);
+}
+
+#button-box {
+    display: flex;
+    justify-content: center;
+    gap: 2ch;
+}
+
+.alarm-button {
+    width: 45%;
+    padding: 1ch;
+    border: none;
+    border-radius: 1ch;
+    box-shadow: var(--default-shadow);
+}
+
+.alarm-button:hover {
+    cursor: pointer;
+}
+
+.yes-button {
+    background-color: #8ee968;
+}
+
+.no-button {
+    background-color: #fe797c;
+}
+
+@media screen and (max-width: 767px) {
+    .alarm-modal {
+        width: 85vw;
+    }
+}
+
 /* timetable */
 
 .main-content.timetable {

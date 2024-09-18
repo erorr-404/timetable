@@ -25,14 +25,16 @@
             <span><a href="timetable.html">Розклад</a></span>
             <span><a href="links.html">Посилання</a></span>
             <span><a href="books.html">Книги</a></span>
-            <!-- <span><a href="settings.html">Налаштування</a></span> -->
         </h3>
     </header>
     <main>
         <div class="info-block">
             <h3><span class="material-symbols-outlined">info</span>Інформація</h3>
-            <p>Оновлено посилання на англійську (2-га група), фізкультура (для дівчат), 
-                інформатика (2-га група). Також, автопідключення працює за 5хв до уроку.</p>
+            <p>Оновлено розклад на середу. Додано можливість увімкнути нагадування (дзвоник)
+                на наступний урок. Через обмеження браузерів, він може іноді не спрацювати.
+                Максимальний перевірений час від моменту натискання кнопки до дзвінка - 33хв.
+                Чи працює це на телефоні - хз, якщо не виходити з сторінки, то напевно так.
+            </p>
         </div>
         <h1>Головна</h1>
         <div class="main-content tiles-box">
@@ -57,8 +59,15 @@
             </a>
         </div>
     </main>
-    <!-- <footer><a href="https://github.com/erorr-404/timetable">Сайт зробив: Erorr</a></footer> -->
+    <div class="alarm-modal" id="alarm-modal">
+        <h4>Сповістити про наступний урок?</h4>
+        <p>Коли розпочнеться урок, ви почуєте дзвоник</p>
+        <div id="button-box">
+            <button type="button" class="alarm-button yes-button" id="alarm-yes">Так</button>
+        <button type="button" class="alarm-button no-button" id="alarm-no">Ні</button>
+        </div>
+    </div>
     <script src="autoconnect.js"></script>
-    <!-- <script src="alarm.js"></script> -->
+    <script src="alarm.js"></script>
 </body>
 </html>
