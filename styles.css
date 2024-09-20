@@ -93,6 +93,10 @@ body {
     color: var(--header-text-color);
 }
 
+body.modal-active {
+    overflow: hidden;
+}
+
 h3 {
     margin: 1ch 0;
 }
@@ -329,6 +333,39 @@ header {
     }
 }
 
+.tip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1ch;
+}
+
+.posts-short-list {
+    width: 70vw;
+    background-color: var(--main-element-color);
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    margin: 1ch auto;
+    padding: 1ch;
+}
+
+.short-post {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1ch;
+    border-bottom: solid 1px var(--header-text-color);
+}
+
+.short-post:last-of-type {
+    border-bottom: none;
+}
+
+.short-post h4 {
+    margin: 1ch 0;
+}
+
 /* links */
 
 #links-box {
@@ -375,6 +412,107 @@ header {
     .books-box {
         margin: 0 1ch;
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* posts */
+
+#posts-box {
+    display: flex;
+    gap: 1ch;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.post {
+    background-color: var(--main-element-color);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    padding: 2ch;
+}
+
+.post > img {
+    height: 200px;
+    width: 400px;
+    object-fit: cover;
+    object-position: 100% 0%;
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    transition: all 1s ease;
+}
+
+.post > img:hover {
+    object-position: 0% 100%;
+    transition: all 1s ease;
+}
+
+.post-modal {
+    position: fixed;
+    width: 50%;
+    height: 80vh;
+    background-color: var(--main-element-color);
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    top: calc((100vh - 80vh) / 2);
+    left: calc(50% / 2);
+    z-index: 3;
+    padding: 3ch;
+    overflow-y: scroll;
+}
+
+.post-modal > img {
+    height: 200px;
+    /* max-height: 200px; */
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% 0%;
+    transition: all 1s ease;
+}
+
+.post-modal > img:hover {
+    height: 500px;
+    transition: all 1s ease;
+}
+
+.post-modal a {
+    text-decoration: underline;
+    color: var(--col-3);
+}
+
+.hidden {
+    display: none;
+}
+
+#overlay {
+    position: fixed;
+    background-color: #31313181;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+    #posts-box {
+        margin: 1ch;
+    }
+    
+    .post {
+        width: 80vw;
+    }
+
+    .post > img {
+        width: 100%;
+    }
+
+    .post-modal {
+        height: 90vh;
+        width: 80vw;
+        top: 2ch;
+        left: auto;
     }
 }
 
