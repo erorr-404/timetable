@@ -88,7 +88,7 @@ function openModal(modal) {
 	if (modal == null) return
 	modal.classList.remove('hidden')
 	overlay.classList.remove('hidden')
-  body.classList.add("modal-active")
+  	body.classList.add("modal-active")
 	console.log(`Modal ${modal.id} active`)
 }
 
@@ -96,6 +96,6 @@ function closeModal(modal) {
 	if (modal == null) return
 	modal.classList.add('hidden')
 	overlay.classList.add('hidden')
-  body.classList.remove("modal-active")
+  	body.classList.remove("modal-active")
 	console.log(`Modal ${modal.id} hidden`)
 }
