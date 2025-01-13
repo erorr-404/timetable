@@ -32,7 +32,7 @@ function updateTable(data) {
       cell.classList.add(`imp-lvl-${dataImportance[subject]}`)
 
       const link = document.createElement("a")
-      link.href = dataLinks[subject]
+      link.href = dataLinks[subject] != undefined ? dataLinks : "https://youtu.be/A67ZkAd1wmI?si=VvEStd66wTdj2UoS"
       link.target = "_blank"
       link.innerText = subject
 
