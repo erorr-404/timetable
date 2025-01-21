@@ -1,11 +1,14 @@
 const table = document.getElementById("main-table")
 const tableRows = table.querySelectorAll("tr")
 
+const warning = "<span title='Потрібен корпоративний акаунт Classroom!' class='material-symbols-outlined'>warning</span>"
+
 const fetchRequests = [
   fetch("./data/importance.json"),
   fetch("./data/links.json"),
   fetch("./data/timetable.json"),
-  fetch("./data/time.json")
+  fetch("./data/time.json"),
+  fetch("./data/corporate-links.json")
 ]
 
 Promise.all(fetchRequests)
@@ -24,6 +27,9 @@ function updateTable(data) {
   const dataLinks = data[1]
   const dataTimetable = data[2]
   const dataTime = data[3]
+  const corporates = data[4]
+  console.log(corporates);
+  
 
   for (const [day, subjects] of Object.entries(dataTimetable)) {
     let counter = 1
@@ -34,7 +40,7 @@ function updateTable(data) {
       const link = document.createElement("a")
       link.href = dataLinks[subject] != undefined ? dataLinks[subject] : "https://youtu.be/A67ZkAd1wmI?si=VvEStd66wTdj2UoS"
       link.target = "_blank"
-      link.innerText = subject
+      link.innerHTML = corporates.includes(subject) == true ? `${warning} ${subject}` : subject
 
       cell.appendChild(link)
 
