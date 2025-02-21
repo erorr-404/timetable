@@ -27,13 +27,29 @@
             <span><a href="links.html">Посилання</a></span>
             <span><a href="books.html">Книги</a></span>
             <span><a href="posts.html">ЧаПи</a></span>
+            <!-- TODO: add Google classroom page -->
+            <!-- <span><a href="#">Classroom</a></span> -->
         </h3>
+        <a href="#" class="material-symbols-outlined" id="settings_button">settings</a>
     </header>
     <main>
         <div class="info-block">
             <h3><span class="material-symbols-outlined">info</span>Інформація</h3>
             <p>
-                Оновлено посилання на більшість уроків. Оновлено розклад середи.
+                <b>❗❗❗ВЕЛИЧЕЗНЕ ОНОВЛЕННЯ❗❗❗</b>
+                <p>
+                    Ви цього не хотіли - я це зробив. Тепер можна <b>один раз обрати вчителя</b> з англійської, фізкультури, 
+                    інформатики та технологій і сайт все автоматично зробить. Дані зберігаються навіть пілся 
+                    перезаходу в браузер (а зникнуть через рік). . 
+                </p>
+                <p>
+                    Після переходу на корпоративні акаунти Google, сайт трошки зламався. Тепер в налаштуваннях ви можете
+                    обрати номер акаунта <b>(authuser)</b> і сайт сам буде обирати вам цей акаунт. Інструкція як це налаштувати
+                    з'явилвсь в розділі ЧаПи.
+                </p>
+                <p>
+                    Якщо ви знайшли баг - спробуйте оновити сторінку. Якщо баг не зник - напишіть мені кудись.
+                </p>
             </p>
         </div>
         <h1>Головна</h1>
@@ -50,7 +66,7 @@
             </a>
             <div class="lesson-autoconnect" id="lesson-autoconnect">
                 <h3>Підключитись до уроку</h3>
-                <p>Зараз іде: <i id="current-lesson">дощ</i></p>
+                <p><i id="current-lesson">дощ</i></p>
             </div>
             <a href="books.html">
                 <div class="tile">
@@ -70,7 +86,67 @@
         <button type="button" class="alarm-button no-button" id="alarm-no">Ні</button>
         </div>
     </div>
+    <div id="settings_menu" class="hidden">
+        <div class="settings-header">
+            <h3>Налаштування</h3>
+            <a href="#" class="material-symbols-outlined" id="settings_close_button">close</a>
+        </div>
+        <div class="settings-content">
+            <fieldset>
+                <div><b>Оберіть вчителя англійської мови:</b></div>
+                <div>
+                    <input type="radio" id="ganopolsky" name="english" value="0" checked onchange="on_settings_update()" />
+                    <label for="1">О. Ганопольський</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="zarytska" name="english" value="1" onchange="on_settings_update()" />
+                    <label for="2">Зарицька</label>
+                  </div>
+            </fieldset>
+            <fieldset>
+                <div><b>Оберіть вчителя інформатики:</b></div>
+                <div>
+                    <input type="radio" id="snigur" name="informatics" value="0" checked onchange="on_settings_update()"/>
+                    <label for="1">П. Снігур</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="sychevska" name="informatics" value="1" onchange="on_settings_update()"/>
+                    <label for="2">Н. Сичевська</label>
+                  </div>
+            </fieldset>
+            <fieldset>
+                <div><b>Оберіть групу фізкультури:</b></div>
+                <div>
+                    <input type="radio" id="pe_men" name="pe" value="0" checked onchange="on_settings_update()" />
+                    <label for="1">Хлопці</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="pe_women" name="pe" value="1" onchange="on_settings_update()"/>
+                    <label for="2">Дівчата</label>
+                  </div>
+            </fieldset>
+            <fieldset>
+                <div><b>Оберіть вчителя технологій:</b></div>
+                <div>
+                    <input type="radio" id="kravchuk" name="technologies" value="0" checked onchange="on_settings_update()"/>
+                    <label for="1">В. Кравчук</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="sarnavska" name="technologies" value="1" onchange="on_settings_update()"/>
+                    <label for="2">І. Сарнавська</label>
+                  </div>
+            </fieldset>
+            <fieldset>
+                <div><b>Оберіть номер корпоративного акаунта (authuser):</b></div>
+                <div>
+                    <input type="number" name="authuser" id="auth_input" value="0" onchange="on_settings_update()"/>
+                </div>
+                <u style="font-size: small;"><a href="#">Що це таке?</a></u>
+            </fieldset>
+        </div>
+    </div>
     <script src="autoconnect.js"></script>
     <script src="alarm.js"></script>
+    <script src="settings.js"></script>
 </body>
 </html>

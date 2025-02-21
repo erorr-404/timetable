@@ -5,6 +5,7 @@ const fetchRequests = [
   fetch("./data/links.json"),
   fetch("./data/timetable.json"),
   fetch("./data/time.json"),
+  fetch("./data/corporate-links.json")
 ]
 
 Promise.all(fetchRequests)
@@ -22,6 +23,13 @@ function updateAutoconnect(data) {
   const dataLinks = data[0]
   const dataTimetable = data[1]
   const dataTime = data[2]
+  const corporates = data[3]
+
+  const english = get_cookie_value('english');
+  const informatics = get_cookie_value('informatics');
+  const pe = get_cookie_value('pe');
+  const technologies = get_cookie_value('technologies');
+  const authuser = get_cookie_value('authuser');
 
   const currentLessonNumber = parseInt(getLessonNumber(dataTime))
   const currentLesson = dataTimetable[getDayName()][currentLessonNumber - 1]
@@ -29,15 +37,40 @@ function updateAutoconnect(data) {
   if (currentLesson == undefined) {
     currentLessonLabel.innerText = "нічого"
   } else {
-    currentLessonLabel.innerText = currentLesson
+    currentLessonLabel.innerText = `${currentLesson} починається о ${dataTime[`${currentLessonNumber}`].start.hour}:${dataTime[`${currentLessonNumber}`].start.minute}`
   }
-    
+  // FIXME: optimize this code
   button.addEventListener('click', () => {
     if (currentLessonLabel.innerText == "нічого") {
       window.open("https://www.youtube.com/watch?v=A67ZkAd1wmI", "_blank").focus()
       return
     } else {
-      window.open(dataLinks[currentLessonLabel.innerText], "_blank").focus()
+      if (Array.isArray(dataLinks[currentLesson])) {
+        switch (currentLesson) {
+          case "Англійська мова":
+            window.open(`${dataLinks[currentLesson][english]}?authuser=${authuser}`, "_blank").focus()
+            break;
+          case "Інформатика":
+            window.open(`${dataLinks[currentLesson][informatics]}?authuser=${authuser}`, "_blank").focus()
+            break;
+          case "Фізкультура":
+            window.open(link.href = `${dataLinks[currentLesson][pe]}`, "_blank").focus()
+            break;
+          case "Технології":
+            window.open(`${dataLinks[currentLesson][technologies]}?authuser=${authuser}`, "_blank").focus()
+            break
+          default:
+            window.open(`${dataLinks[currentLesson][0]}?authuser=${authuser}`, "_blank").focus()
+            break;
+        }
+      } else {
+        if (corporates.includes(currentLesson) == false) {
+          window.open(dataLinks[currentLesson] != undefined ? dataLinks[currentLesson] : "https://youtu.be/A67ZkAd1wmI?si=VvEStd66wTdj2UoS", "_blank").focus()
+        } else {
+          window.open(dataLinks[currentLesson] != undefined ? `${dataLinks[currentLesson]}?authuser=${authuser}` : "https://youtu.be/A67ZkAd1wmI?si=VvEStd66wTdj2UoS", "_blank").focus()
+        }
+      }
+      // window.open(dataLinks[currentLesson], "_blank").focus()
     }
   })
 }

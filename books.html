@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3112567728462430" crossorigin="anonymous"></script>
     <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Книги</title>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -27,6 +28,7 @@
             <span><a href="books.html">Книги</a></span>
             <span><a href="posts.html">ЧаПи</a></span>
         </h3>
+        <a href="#" class="material-symbols-outlined" id="settings_button">settings</a>
     </header>
     <main>
         <h1>Книги</h1>
@@ -41,6 +43,66 @@
         </div>
     </main>
     <!-- <footer><a href="https://github.com/erorr-404/timetable">Сайт зробив: Erorr</a></footer> -->
+    <div id="settings_menu" class="hidden">
+        <div class="settings-header">
+            <h3>Налаштування</h3>
+            <a href="#" class="material-symbols-outlined" id="settings_close_button">close</a>
+        </div>
+        <div class="settings-content">
+            <fieldset>
+                <div><b>Оберіть вчителя англійської мови:</b></div>
+                <div>
+                    <input type="radio" id="ganopolsky" name="english" value="0" checked onchange="on_settings_update()" />
+                    <label for="1">О. Ганопольський</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="zarytska" name="english" value="1" onchange="on_settings_update()" />
+                    <label for="2">Зарицька</label>
+                  </div>
+            </fieldset>
+            <fieldset>
+                <div><b>Оберіть вчителя інформатики:</b></div>
+                <div>
+                    <input type="radio" id="snigur" name="informatics" value="0" checked onchange="on_settings_update()"/>
+                    <label for="1">П. Снігур</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="sychevska" name="informatics" value="1" onchange="on_settings_update()"/>
+                    <label for="2">Н. Сичевська</label>
+                  </div>
+            </fieldset>
+            <fieldset>
+                <div><b>Оберіть групу фізкультури:</b></div>
+                <div>
+                    <input type="radio" id="pe_men" name="pe" value="0" checked onchange="on_settings_update()" />
+                    <label for="1">Хлопці</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="pe_women" name="pe" value="1" onchange="on_settings_update()"/>
+                    <label for="2">Дівчата</label>
+                  </div>
+            </fieldset>
+            <fieldset>
+                <div><b>Оберіть вчителя технологій:</b></div>
+                <div>
+                    <input type="radio" id="kravchuk" name="technologies" value="0" checked onchange="on_settings_update()"/>
+                    <label for="1">В. Кравчук</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="sarnavska" name="technologies" value="1" onchange="on_settings_update()"/>
+                    <label for="2">І. Сарнавська</label>
+                  </div>
+            </fieldset>
+            <fieldset>
+                <div><b>Оберіть номер корпоративного акаунта (authuser):</b></div>
+                <div>
+                    <input type="number" name="authuser" id="auth_input" value="0" onchange="on_settings_update()"/>
+                </div>
+                <u style="font-size: small;"><a href="#">Що це таке?</a></u>
+            </fieldset>
+        </div>
+    </div>
      <script src="books.js"></script>
+     <script src="settings.js"></script>
 </body>
 </html>

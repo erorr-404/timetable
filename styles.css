@@ -128,6 +128,7 @@ header {
     font-family: "Comfortaa", sans-serif;
     font-style: normal;
     color: var(--main-element-color);
+    justify-content: space-between;
 }
 
 .header-links-box {
@@ -136,6 +137,71 @@ header {
     flex-wrap: nowrap;
     gap: 4ch;
 }
+
+/* settings */
+
+#settings_button {
+    font-size:xx-large;
+    font-weight: normal;
+    font-style: normal;
+}
+
+#settings_menu {
+    position: fixed;
+    top: 2ch;
+    right: 2ch;
+    width: 20vw;
+    height: calc(100vh - 4ch);
+    background-color: var(--background-main-color);
+    border-radius: var(--default-border-radius);
+    transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: var(--default-shadow);
+    min-width: 250px;
+}
+
+#settings_menu.visible {
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+.settings-header {
+    background-color: var(--col-4);
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    margin: 1ch 1ch 0 1ch;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: .5ch;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--main-element-color);
+    font-family: "Comfortaa", sans-serif;
+}
+
+.settings-header > * {
+    margin-left: .5ch;
+    margin-right: .5ch;
+}
+
+.settings-content {
+    padding: 1ch;
+}
+
+.settings-content > fieldset {
+    margin: 1ch 0;
+    background-color: var(--main-element-color);
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    border: none;
+}
+/* TODO: create mobile screen verion */
+
+/* main content */
 
 .main-content {
     margin: 1ch 10ch;
@@ -252,7 +318,7 @@ header {
 .alarm-modal {
     position: fixed;
     bottom: 1ch;
-    right: 1ch;
+    left: 1.5ch;
     padding: 2ch;
     border-radius: var(--default-border-radius);
     box-shadow: var(--default-shadow);

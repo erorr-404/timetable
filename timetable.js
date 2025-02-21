@@ -29,8 +29,15 @@ function updateTable(data) {
   const dataTime = data[3]
   const corporates = data[4]
   console.log(corporates);
-  
 
+  // TODO: add support for mobile screens
+
+  const english = get_cookie_value('english');
+  const informatics = get_cookie_value('informatics');
+  const pe = get_cookie_value('pe');
+  const technologies = get_cookie_value('technologies');
+  const authuser = get_cookie_value('authuser');
+  
   for (const [day, subjects] of Object.entries(dataTimetable)) {
     let counter = 1
     subjects.forEach(subject => {
@@ -38,7 +45,33 @@ function updateTable(data) {
       cell.classList.add(`imp-lvl-${dataImportance[subject]}`)
 
       const link = document.createElement("a")
-      link.href = dataLinks[subject] != undefined ? dataLinks[subject] : "https://youtu.be/A67ZkAd1wmI?si=VvEStd66wTdj2UoS"
+      
+      if (Array.isArray(dataLinks[subject])) {
+        switch (subject) {
+          case "Англійська мова":
+            link.href = `${dataLinks[subject][english]}?authuser=${authuser}`
+            break;
+          case "Інформатика":
+            link.href = `${dataLinks[subject][informatics]}?authuser=${authuser}`
+            break;
+          case "Фізкультура":
+            link.href = `${dataLinks[subject][pe]}`
+            break;
+          case "Технології":
+            link.href = `${dataLinks[subject][technologies]}?authuser=${authuser}`
+            break
+          default:
+            link.href = `${dataLinks[subject][0]}?authuser=${authuser}`
+            break;
+        }
+      } else {
+        if (corporates.includes(subject) == false) {
+          link.href = dataLinks[subject] != undefined ? dataLinks[subject] : "https://youtu.be/A67ZkAd1wmI?si=VvEStd66wTdj2UoS"
+        } else {
+          link.href = dataLinks[subject] != undefined ? `${dataLinks[subject]}?authuser=${authuser}` : "https://youtu.be/A67ZkAd1wmI?si=VvEStd66wTdj2UoS"
+        }
+      }
+
       link.target = "_blank"
       link.innerHTML = corporates.includes(subject) == true ? `${warning} ${subject}` : subject
 
