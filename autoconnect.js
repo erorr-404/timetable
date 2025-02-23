@@ -16,7 +16,7 @@ Promise.all(fetchRequests)
     updateAutoconnect(data)
   })
   .catch(error => {
-    // alert(`Error: ${error}`)
+    alert(`Error: ${error}`)
   })
 
 function updateAutoconnect(data) {
@@ -31,15 +31,24 @@ function updateAutoconnect(data) {
   const technologies = get_cookie_value('technologies');
   const authuser = get_cookie_value('authuser');
 
+  const dayName = getDayName()
+
+  if (dayName == null) {
+    button.classList.add("unavailable")
+    return
+  }
+
   const currentLessonNumber = parseInt(getLessonNumber(dataTime))
   const currentLesson = dataTimetable[getDayName()][currentLessonNumber - 1]
-
-  if (currentLesson == undefined) {
+  
+  if (currentLesson == undefined || getDayName() == null) {
     currentLessonLabel.innerText = "нічого"
+    button.classList.add("unavailable")
   } else {
     currentLessonLabel.innerText = `${currentLesson} починається о ${dataTime[`${currentLessonNumber}`].start.hour}:${dataTime[`${currentLessonNumber}`].start.minute}`
   }
   // FIXME: optimize this code
+  // TODO: change button color to grey and cursor to normal (make it disabiled)
   button.addEventListener('click', () => {
     if (currentLessonLabel.innerText == "нічого") {
       window.open("https://www.youtube.com/watch?v=A67ZkAd1wmI", "_blank").focus()

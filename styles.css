@@ -87,7 +87,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 10fr .5fr;
+    grid-template-rows: 5rem 10fr .5fr;
     background-color: var(--background-main-color);
     font-family: var(--main-font);
     color: var(--header-text-color);
@@ -290,8 +290,9 @@ header {
 }
 
 .unavailable {
-    background-color: #808080;
-    color: #bbbbbb;
+    background-color: #808080 !important;
+    color: #bbbbbb !important;
+    cursor: default !important;
 }
 
 @media screen and (max-width: 767px) {
@@ -580,6 +581,68 @@ header {
         top: 2ch;
         left: auto;
     }
+}
+
+/* classroom */
+
+#classroom-main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2ch;
+    width: calc(100vw - 180px);
+}
+
+@media screen and (max-width: 979px) {
+    #classroom-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #classroom-main {
+        grid-template-columns: 1fr;
+        width: calc(70vw + 10ch);
+        margin: auto auto;
+    }
+}
+
+#classroom-main > * {
+    height: 250px;
+}
+
+.classroom-box {
+    display: grid;
+    grid-template-rows: 3fr 1fr 1fr;
+    background-color: var(--main-element-color);
+    box-shadow: var(--default-shadow);
+    border-radius: var(--default-border-radius);
+    cursor: pointer;
+    align-items: baseline;
+}
+
+.classroom-background {
+    border-radius: var(--default-border-radius) var(--default-border-radius) 0 0 ;
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+    background-position-x: right;
+}
+
+.classroom-name {
+    padding-left: 1ch;
+    font-weight:bolder;
+    font-size: larger;
+    font-family: "Comfortaa", sans-serif;
+}
+
+.classroom-join-button {
+    background-color: var(--col-4);
+    color: var(--main-element-color);
+    justify-self: center;
+    padding: 1ch 2ch;
+    border-radius: var(--default-border-radius);
+    box-shadow: var(--default-shadow);
+    cursor: pointer;
 }
 
 /* footer */

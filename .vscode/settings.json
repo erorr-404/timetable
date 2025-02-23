@@ -2,5 +2,7 @@
     "liveServer.settings.port": 5501,
     "cSpell.words": [
         "corporates"
-    ]
+    ],
+    "todo-tree.tree.showBadges": true,
+    "todo-tree.tree.showCountsInTree": true
 }
