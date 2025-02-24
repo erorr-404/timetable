@@ -21,6 +21,7 @@
 </script>
 <body>
     <header>
+        <h3 class="mobile-page-name">Розклад уроків</h3>
         <h3 class="header-links-box">
             <span><a href="index.html">Головна</a></span>
             <span><a href="timetable.html">Розклад</a></span>
@@ -28,11 +29,20 @@
             <span><a href="classroom.html">Classroom</a></span>
             <span><a href="books.html">Книги</a></span>
             <span><a href="posts.html">ЧаПи</a></span>
-            <!-- BUG: change header for mobile devices -->
              <!-- TODO: fix README.md -->
         </h3>
-        <a href="#" class="material-symbols-outlined" id="settings_button">settings</a>
+        <a href="#" class="material-symbols-outlined settings-button" id="settings_button">settings</a>
+        <a href="#" id="burger-menu-button"><span class="material-symbols-outlined">menu</span></a>
     </header>
+    <nav class="hidden">
+        <span><a href="index.html">Головна</a></span>
+            <span><a href="timetable.html">Розклад</a></span>
+            <!-- <span><a href="links.html">Посилання</a></span> -->
+            <span><a href="classroom.html">Classroom</a></span>
+            <span><a href="books.html">Книги</a></span>
+            <span><a href="posts.html">ЧаПи</a></span>
+            <a href="#" class="material-symbols-outlined settings-button nav-settings-button" id="settings_button">settings</a>
+    </nav>
     <main>
         <div class="info-block">
             <h3><span class="material-symbols-outlined">info</span>Інформація</h3>
@@ -151,6 +161,7 @@
             </fieldset>
         </div>
     </div>
+    <script src="nav-bar.js"></script>
     <script src="autoconnect.js"></script>
     <script src="alarm.js"></script>
     <script src="settings.js"></script>

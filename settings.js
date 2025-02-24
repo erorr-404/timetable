@@ -1,17 +1,19 @@
-document.getElementById('settings_button').addEventListener('click', function() {
-    const radialMenu = document.getElementById('settings_menu');
-    if (radialMenu.classList.contains('hidden')) {
-        radialMenu.classList.remove('hidden');
-        setTimeout(() => {
-            radialMenu.classList.add('visible');
-        }, 10); // Small delay to trigger the transition
-    } else {
-        radialMenu.classList.remove('visible');
-        setTimeout(() => {
-            radialMenu.classList.add('hidden');
-        }, 300); // Match the transition duration
-    }
-});
+document.querySelectorAll('#settings_button').forEach(button => {
+    button.addEventListener('click', function() {
+        const radialMenu = document.getElementById('settings_menu');
+        if (radialMenu.classList.contains('hidden')) {
+            radialMenu.classList.remove('hidden');
+            setTimeout(() => {
+                radialMenu.classList.add('visible');
+            }, 10); // Small delay to trigger the transition
+        } else {
+            radialMenu.classList.remove('visible');
+            setTimeout(() => {
+                radialMenu.classList.add('hidden');
+            }, 300); // Match the transition duration
+        }
+    });
+})
 
 document.getElementById('settings_close_button').addEventListener('click', function() {
     const radialMenu = document.getElementById('settings_menu');

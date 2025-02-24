@@ -21,6 +21,7 @@
 </script>
 <body>
     <header>
+        <h3 class="mobile-page-name">ЧаПи</h3>
         <h3 class="header-links-box">
             <span><a href="index.html">Головна</a></span>
             <span><a href="timetable.html">Розклад</a></span>
@@ -29,8 +30,18 @@
             <span><a href="books.html">Книги</a></span>
             <span><a href="posts.html">ЧаПи</a></span>
         </h3>
-        <a href="#" class="material-symbols-outlined" id="settings_button">settings</a>
+        <a href="#" class="material-symbols-outlined settings-button" id="settings_button">settings</a>
+        <a href="#" id="burger-menu-button"><span class="material-symbols-outlined">menu</span></a>
     </header>
+    <nav class="hidden">
+        <span><a href="index.html">Головна</a></span>
+            <span><a href="timetable.html">Розклад</a></span>
+            <!-- <span><a href="links.html">Посилання</a></span> -->
+            <span><a href="classroom.html">Classroom</a></span>
+            <span><a href="books.html">Книги</a></span>
+            <span><a href="posts.html">ЧаПи</a></span>
+            <a href="#" class="material-symbols-outlined settings-button nav-settings-button" id="settings_button">settings</a>
+    </nav>
     <main>
         <h1>ЧаПи</h1>
         <amp-ad width="100vw" height="320" type="adsense" data-ad-client="ca-pub-3112567728462430" data-ad-slot="5393247383" data-auto-format="rspv" data-full-width="">
@@ -40,7 +51,7 @@
             <!-- js works here -->
         </div>
     </main>
-    <footer><a href="https://github.com/erorr-404/timetable">Сайт зробив: Erorr</a></footer>
+    <!-- <footer><a href="https://github.com/erorr-404/timetable">Сайт зробив: Erorr</a></footer>    -->
     <div id="settings_menu" class="hidden">
         <div class="settings-header">
             <h3>Налаштування</h3>
@@ -101,6 +112,7 @@
         </div>
     </div>
     <div id="overlay" class="hidden"></div>
+    <script src="nav-bar.js"></script>
     <script src="posts.js"></script>
     <script src="settings.js"></script>
 </body>

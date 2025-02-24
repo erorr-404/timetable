@@ -48,7 +48,6 @@ function updateAutoconnect(data) {
     currentLessonLabel.innerText = `${currentLesson} починається о ${dataTime[`${currentLessonNumber}`].start.hour}:${dataTime[`${currentLessonNumber}`].start.minute}`
   }
   // FIXME: optimize this code
-  // TODO: change button color to grey and cursor to normal (make it disabiled)
   button.addEventListener('click', () => {
     if (currentLessonLabel.innerText == "нічого") {
       window.open("https://www.youtube.com/watch?v=A67ZkAd1wmI", "_blank").focus()
