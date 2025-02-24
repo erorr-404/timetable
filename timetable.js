@@ -2,13 +2,15 @@ const table = document.getElementById("main-table")
 const tableRows = table.querySelectorAll("tr")
 
 const warning = "<span title='Потрібен корпоративний акаунт Classroom!' class='material-symbols-outlined'>warning</span>"
+const bookIcon = "<span title='Натисніть щоб відкрити книгу' class='material-symbols-outlined book-link'>book_2</span>"
 
 const fetchRequests = [
   fetch("./data/importance.json"),
   fetch("./data/links.json"),
   fetch("./data/timetable.json"),
   fetch("./data/time.json"),
-  fetch("./data/corporate-links.json")
+  fetch("./data/corporate-links.json"),
+  fetch("./data/subject-books.json")
 ]
 
 Promise.all(fetchRequests)
@@ -28,9 +30,10 @@ function updateTable(data) {
   const dataTimetable = data[2]
   const dataTime = data[3]
   const corporates = data[4]
-  console.log(corporates);
+  const dataBooks = data[5]
 
   // TODO: add support for mobile screens
+  // TODO: add classroom links for each subject
 
   const english = get_cookie_value('english');
   const informatics = get_cookie_value('informatics');
@@ -43,6 +46,10 @@ function updateTable(data) {
     subjects.forEach(subject => {
       const cell = document.createElement("td")
       cell.classList.add(`imp-lvl-${dataImportance[subject]}`)
+
+      const cellDiv = document.createElement("div")
+      cellDiv.classList.add("subject-cell")
+      cell.appendChild(cellDiv)
 
       const link = document.createElement("a")
       
@@ -75,8 +82,16 @@ function updateTable(data) {
       link.target = "_blank"
       link.innerHTML = corporates.includes(subject) == true ? `${warning} ${subject}` : subject
 
-      cell.appendChild(link)
+      cellDiv.appendChild(link)
 
+      if (dataBooks[subject] != undefined) {
+        const book = document.createElement("a")
+        book.href = dataBooks[subject]
+        book.target = "_blank"
+        book.innerHTML = bookIcon
+        cellDiv.appendChild(book)
+      }
+      
       tableRows[counter].appendChild(cell)
       counter++
     })

@@ -441,6 +441,16 @@ nav {
     background-color: var(--main-element-color);
 }
 
+.subject-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-link {
+    margin: auto 0;
+}
+
 .text-center {
     text-align: center;
 }
